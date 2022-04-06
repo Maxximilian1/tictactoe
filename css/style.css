@@ -1,0 +1,256 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+body {
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+
+span {
+  display: block;
+}
+
+.game_bg {
+  padding-top: 70px;
+  background: url("../img/bg.jpg") no-repeat 50% 50%/cover;
+}
+
+.back-shapes {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.floating {
+  position: absolute;
+  animation-name: floating;
+  -webkit-animation-name: floating;
+  animation-duration: 5s;
+  -webkit-animation-duration: 5s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+.floating.circle {
+  display: inline-block;
+  width: 39px;
+  height: 39px;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAnCAYAAACMo1E1AAAABHNCSVQICAgIfAhkiAAAA0pJREFUWIXdmL1O40AQx8fZ5BxQCqRrLqKxqKjAOl0JvMHxBIjHyCu4dGkJ+khpQNa9QeTyZIkihbtYCKWwbC1KFXbtvYJxbrIYMOBD1o20UhDe//x2dnb2w1BKQVut25SQYRhG+Vs1NGLjvToI0yHNwKawFWV7L+yb4AhQFwC6QRB8tyzrxDTN3V6vN2SMfc3zPBVCLFar1d18Pp8eHR2FACCxvQ1UKfVqg8eIMADo+75/kKbphRDiVtUwIcRtmqYXvu8fAEAfdYxafmuC9TzPs5IkuSyK4qEOlG5FUTwkSXLpeZ4FAL06gHXA+mEYnkops1f851LKe6VU/tJHUsosDMNTjOKLgK+CxXE8KopCVDjhWZZNZrPZ2Xg83rdtewcABrZt74zH4/3ZbHaWZdlESskroijiOB69BvgSmBnH8ahq9JzzK8dxLBTvweZqLRdNDwD6juNYnPOrKh0ENJ8DfDbHwjA81SMmpUyiKDoHgO06iU0W0nYURedSykSPIE5xZQ5WCTLP8yw9x5bL5dR13b26yVw1YNd195bL5VQbcIaLhL0IV+ZZkiSXesQQrPtWME2767runh7BJEkuq/LvSdR83z/QywVO5Zf3gmmAX6IoOtem9wHr4Eb09M5mmqYXtCPn/AoAtgCg8xEw4qMDAFv6IknT9AIAzEo4HNWAVn4pJcdV+SQfPgjIHMexaJkRQtwCwIDOzkaHIAiO6WiyLJvUKZbvnN5+lmUT6i8IgmMaiA7ZZpllWSd0310sFr8AIFeo2JShXo76a0P/rPybwhmmae7Sj29ubn4DQN4kGLEc9deG/tfnwo0wc86vSZRz3JIanVI6tbZt7yiyF3POr4Gk0QYcLZBSynvQEvQf5N0ADwtKqcdCT+HotEKe52n5mzE2sG27sWN8ldm23WWMDar8A2DOYYIqIcSC/m80Gn0DmgPNmoH66wChf1UuQBo5tVqt7mjvw8PDH0BWT8PGUH9t6H9dGShcPp/Pp/Tj4XD4EwAYvVk1YajHUH9t6P9vddATtJU7BHZq595ajqjNp5L2nufK6LXyJEyFWnmHIKLtu31pgO27t+qArbvxa4DteyvRAD/9lanV73P/z8tmDVgAaMGb8GfYHwpq7kYvpXclAAAAAElFTkSuQmCC");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 1;
+}
+.floating.cross {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url("data:image/svg+xml,%3Csvg width='26' height='27' viewBox='0 0 26 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='1.06066' y1='1.93934' x2='24.0607' y2='24.9393' stroke='white' stroke-width='3'/%3E%3Cline x1='24.0607' y1='2.06066' x2='1.06066' y2='25.0607' stroke='white' stroke-width='3'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 1;
+}
+
+.game_wrapper {
+  position: relative;
+  height: 100vh;
+}
+.game_wrapper h1 {
+  text-align: center;
+  margin-bottom: 65px;
+  color: #fff;
+  font-size: 50px;
+  font-weight: 700;
+  text-shadow: 0 0 20px #ffffff;
+}
+
+#game_area {
+  width: 480px;
+  height: 480px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  margin: 0 auto;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  background-color: #fff;
+  box-shadow: 0 0 30px 0 #3168ff;
+}
+
+.element {
+  background-position: 50%;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+.element.cross {
+  background-image: url("data:image/svg+xml,%3Csvg width='79' height='79' viewBox='0 0 79 79' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M71.0352 78.0757L39.5002 46.4912L7.96515 78.0757L0.924316 71.0349L32.5089 39.4999L0.924316 7.96491L7.96515 0.924072L39.5002 32.5087L71.0352 0.973657L78.0264 7.96491L46.4914 39.4999L78.0264 71.0349L71.0352 78.0757Z' fill='%23FF5674'/%3E%3C/svg%3E");
+}
+.element.circle {
+  background-image: url("data:image/svg+xml,%3Csvg width='77' height='77' viewBox='0 0 77 77' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='38.5' cy='38.5' r='34' stroke='%235667FF' stroke-width='9'/%3E%3C/svg%3E");
+}
+
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.modal.active {
+  display: block;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(9, 0, 113, 0.7);
+}
+
+.winner_message {
+  text-align: center;
+  padding-top: 106px;
+  max-width: 528px;
+  width: 100%;
+  height: 443px;
+  background: #fff;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.winner_message h2 {
+  font-weight: 700;
+  color: #0B3F84;
+  font-size: 45px;
+}
+.winner_message::before {
+  content: "";
+  position: absolute;
+  top: -75px;
+  left: 185px;
+  width: 164px;
+  height: 164px;
+  background: url("../img/award.png") no-repeat center;
+}
+.winner_message button {
+  font-size: 22px;
+  color: #fff;
+  width: 194px;
+  padding: 12px 0;
+  background: #FF9C37;
+  margin-top: 70px;
+}
+
+.winner {
+  font-weight: 500;
+  margin-top: 38px;
+  text-transform: capitalize;
+  font-size: 36px;
+}
+
+.winner_element {
+  margin: 40px 0;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0%) rotate(-55deg);
+  }
+  50% {
+    transform: translateY(300%) rotate(55deg);
+  }
+  100% {
+    transform: translateY(0%) rotate(-55deg);
+  }
+}
+@-webkit-keyframes floating {
+  0% {
+    -webkit-transform: translateY(0%);
+  }
+  50% {
+    -webkit-transform: translateY(300%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
