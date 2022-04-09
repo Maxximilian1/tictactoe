@@ -1,3 +1,5 @@
+'use strict'
+
 const gameArea = document.getElementById('game_area'),
       boxes = document.querySelectorAll('.box'),
       modal = document.querySelector('.modal'),
@@ -7,12 +9,12 @@ const gameArea = document.getElementById('game_area'),
 let move = 0;
 
 gameArea.addEventListener('click', e => {
-
-  if (e.target && e.target.matches('.box')) {
+  const target = e.target;
+  if (target && target.matches('.box')) {
      if (move % 2 === 0) {
-        e.target.innerHTML = `<div class="element cross"></div>`
+        target.innerHTML = `<div class="element cross"></div>`
       } else {
-        e.target.innerHTML = `<div class="element circle"></div>`
+        target.innerHTML = `<div class="element circle"></div>`
       }
       move++;
       check();
@@ -46,8 +48,14 @@ const check = () => {
     ) {
       result = 'circles';
       winnerResult(result)
-    }
-  }   
+    } 
+  }
+
+  const element = document.querySelectorAll('.element')
+  if(element.length == 9) {
+    result = 'draw';
+    winnerResult(result)
+  }
 }
 
 const winnerResult = winner => {
